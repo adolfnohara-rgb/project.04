@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Civic Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">Civic Tracker - Admin</h1>
+            <div class="nav-buttons">
+                <span id="userWelcome" class="user-welcome"></span>
+                <button class="btn btn-outline" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>Admin Dashboard</h1>
+                <div class="filters">
+                    <select id="statusFilter" onchange="filterIssues()">
+                        <option value="">All Status</option>
+                        <option value="Pending">Pending</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Resolved">Resolved</option>
+                    </select>
+                    <select id="categoryFilter" onchange="filterIssues()">
+                        <option value="">All Categories</option>
+                        <option value="Road">Road</option>
+                        <option value="Garbage">Garbage</option>
+                        <option value="Water">Water</option>
+                        <option value="Electricity">Electricity</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <h3 id="totalIssues">0</h3>
+                    <p>Total Issues</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="pendingIssues">0</h3>
+                    <p>Pending Issues</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="inProgressIssues">0</h3>
+                    <p>In Progress</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="resolvedIssues">0</h3>
+                    <p>Resolved Issues</p>
+                </div>
+            </div>
+
+            <div class="issues-section">
+                <h2>All Reported Issues</h2>
+                <div class="issues-grid" id="allIssues">
+                    <!-- Issues will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Issue Details Modal -->
+    <div id="issueDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('issueDetailsModal')">&times;</span>
+            <div id="issueDetailsContent">
+                <!-- Issue details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

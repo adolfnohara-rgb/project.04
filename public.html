@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civic Issue Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">Civic Tracker</h1>
+            <div class="nav-buttons">
+                <button class="btn btn-outline" onclick="showLogin()">Login</button>
+                <button class="btn btn-primary" onclick="showSignup()">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Report Civic Issues in Your Community</h1>
+                <p>Help make your community better by reporting and tracking civic issues like road damage, garbage overflow, water leaks, and electricity problems.</p>
+                <button class="btn btn-primary btn-large" onclick="showSignup()">Get Started</button>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2>How It Works</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>📱 Report Issues</h3>
+                        <p>Take a photo and report civic issues with your live location</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📍 Track Progress</h3>
+                        <p>Monitor the status of your reported issues in real-time</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🏛️ Authority Management</h3>
+                        <p>Authorities can efficiently manage and resolve reported issues</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Public Issues Section -->
+        <section class="public-issues">
+            <div class="container">
+                <h2>Recent Issues</h2>
+                <div class="issues-grid" id="publicIssues">
+                    <!-- Issues will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" onclick="showSignup()">Sign up</a></p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Name:</label>
+                    <input type="text" id="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email:</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password:</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupRole">Role:</label>
+                    <select id="signupRole" required>
+                        <option value="citizen">Citizen</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+        </div>
+    </div>
+
+    <script src="public.js"></script>
+</body>
+</html>
